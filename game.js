@@ -124,7 +124,8 @@ function loop() {
 	if(playing) board = updateBoard(board);
 	render(board);
 
-	window.requestAnimationFrame(loop);
+	var delay = (100 - document.getElementById("speed").value) * 10;
+	window.setTimeout(loop, delay);
 }
 fillboard(200, 100);
 loop();
